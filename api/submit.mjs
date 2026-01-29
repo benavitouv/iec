@@ -56,7 +56,7 @@ const uploadAttachment = async (file) => {
   const contentType = file.type || 'application/octet-stream';
   const filename = file.name || 'iec-request-upload';
 
-  const storageResponse = await fetch(STORAGE_URL, {
+  const storageResponse = await fetch('https://iec.api.sb.wonderful.ai/api/v1/storage', {
     method: 'POST',
     headers: {
       'X-API-Key': STORAGE_API_KEY,
