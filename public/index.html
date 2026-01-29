@@ -145,50 +145,58 @@
 
     <script type="module" src="app.js"></script>
     <script>
-(() => {
-  const s = document.createElement('script');
-  s.src = 'https://iec.app.sb.wonderful.ai/embed/wonderful-chat.js';
-  s.onload = () => {
-    new window.WonderfulChat({
-      environment: "iec.api.sb.wonderful.ai",
-      agentId: "45c1bb18-b046-407f-b8c5-3ac07ce1b023",
-
-      // Core settings
-      agentName: 'Ori',
-      buttonText: 'Chat with us',
-      placeholderText: 'Type your message...',
-      isRTL: false,
-
-      // Main theme colors
-      primaryColor: '#ffc638',
-      accentColor: '#ffbf3f',
-      textColor: '#333333',
-
-      // Chat appearance
-      headerBgColor: '#ffa84a',
-      headerTextColor: '#ffffff',
-
-      // Message bubbles
-      userBubbleColor: '#ffd37b',
-      userTextColor: '#ffffff',
-      agentBubbleColor: '#ffffff',
-      agentTextColor: '#333333',
-
-      // Background colors
-      windowBgColor: '#ffffff',
-      messagesBgColor: '#f5f7fb',
-      inputBgColor: '#f5f7fb',
-
-      // Status indicators
-      statusColor: '#4CAF50',
-      errorColor: '#F44336',
-
-      // Optional logo (can be removed)
-      logoUrl: 'IsraelElectric.png'
-    });
-  };
-  document.head.appendChild(s);
-})();
+      (() => {
+              const s = document.createElement('script');
+              s.src = 'https://iec.app.sb.wonderful.ai/embed/wonderful-chat.js';
+              s.onload = () => {
+                try {
+                  new window.WonderfulChat({
+                    environment: "iec.api.sb.wonderful.ai",
+                    agentId: "45c1bb18-b046-407f-b8c5-3ac07ce1b023",
+      
+                    // Core settings
+                    agentName: 'עוזר עדכון מונה חשמל',
+                    buttonText: 'צ׳אט לעזרה בעדכון מונה',
+                    placeholderText: 'כתבו הודעה כאן...',
+                    isRTL: true,
+      
+                    // Main theme colors
+                    primaryColor: '#ff7a00',
+                    accentColor: '#ff9800',
+                    textColor: '#2b1b0b',
+      
+                    // Chat appearance
+                    headerBgColor: '#ff7a00',
+                    headerTextColor: '#ffffff',
+      
+                    // Message bubbles
+                    userBubbleColor: '#ffb347',
+                    userTextColor: '#2b1b0b',
+                    agentBubbleColor: '#ffffff',
+                    agentTextColor: '#2b1b0b',
+      
+                    // Background colors
+                    windowBgColor: '#ffffff',
+                    messagesBgColor: '#ffffff',
+                    inputBgColor: '#ffffff',
+      
+                    // Status indicators
+                    statusColor: '#ff7a00',
+                    errorColor: '#F44336',
+      
+                    // Optional logo
+                    logoUrl: 'IsraelElectric.png'
+                  });
+                  console.log('WonderfulChat initialized successfully');
+                } catch (error) {
+                  console.error('Error initializing WonderfulChat:', error);
+                }
+              };
+              s.onerror = () => {
+                console.error('Failed to load WonderfulChat script from:', s.src);
+              };
+              document.head.appendChild(s);
+            })();
     </script>
   </body>
 </html>
